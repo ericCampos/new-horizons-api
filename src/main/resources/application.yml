@@ -1,0 +1,28 @@
+# Configuración de New Horizons API.
+# Los valores sensibles vienen de .env (fuera de git) o de variables de entorno: nunca aquí.
+spring:
+  application:
+    name: new-horizons-api
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    # Flyway manda en el esquema; Hibernate solo comprueba que entidades y tablas coinciden.
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:127.0.0.1:9094}
+
+server:
+  port: 8940
+  address: 127.0.0.1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
