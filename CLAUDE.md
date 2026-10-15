@@ -7,7 +7,7 @@ read `../CLAUDE.md` first.
 ## Commands
 - Dev infra: `scripts/dev-up.sh` (Postgres 127.0.0.1:5434, Kafka 127.0.0.1:9094; credentials in `.env`, never print them)
 - Run: `./mvnw spring-boot:run` → http://127.0.0.1:8940 (Swagger at `/swagger-ui/index.html` from day 3)
-- Tests: `./mvnw test` (unit) · `./mvnw verify` (all, integration tests use Testcontainers: Docker required)
+- Tests: `./mvnw test` (unit) · `./mvnw verify` (all; `*IT` integration tests run with failsafe, added on day 2 in lesson 2.3; Testcontainers needs Docker)
 - Authorship KPI: `scripts/authorship.sh`
 
 ## Conventions

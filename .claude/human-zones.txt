@@ -1,15 +1,18 @@
 # Human zones: code that Eric writes by hand (instance 2 of each pattern). Claude Code is blocked here by hooks.
 # Format: `glob | anchor`. The glob is matched against the path relative to this repo.
 # The anchor is a literal fragment the Bash hook looks for (it cannot evaluate globs inside commands).
+# Migrations: V1 tracks (Claude) · V2 modules+tramos (Eric) · V3 idempotency (Eric) · V4 outbox (Claude) · V5 ledger (Eric).
 # Defined for the whole 15-day plan on day 0 so that nobody has to "open" a zone later.
 src/main/java/**/module/**                      | newhorizons/module/
 src/main/java/**/tramo/**                       | newhorizons/tramo/
 src/main/java/**/review/**/Sm2*.java            | /Sm2
 src/main/java/**/review/**/Attempt*.java        | /Attempt
-src/main/java/**/ledger/**/XpLedgerConsumer*    | XpLedgerConsumer
+src/main/java/**/ledger/**                      | newhorizons/ledger/
 src/main/java/**/exports/**                     | newhorizons/exports/
 src/main/resources/db/migration/V2__*.sql       | migration/V2__
-src/main/resources/db/migration/V4__*.sql       | migration/V4__
+src/main/resources/db/migration/V3__*.sql       | migration/V3__
+src/main/resources/db/migration/V5__*.sql       | migration/V5__
 src/test/java/**/tramo/**                       | newhorizons/tramo/
 src/test/java/**/review/**                      | newhorizons/review/
+src/test/java/**/ledger/**                      | newhorizons/ledger/
 src/test/java/**/exports/**                     | newhorizons/exports/

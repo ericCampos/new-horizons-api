@@ -1,4 +1,5 @@
-# Infraestructura de desarrollo de New Horizons: Postgres, Kafka y LocalStack (S3 falso).
+# Infraestructura de desarrollo de New Horizons: Postgres y Kafka.
+# (S3 falso para tests llega el día 13: LocalStack ahora exige cuenta, se decide entre MinIO y cuenta gratuita.)
 # - `name:` explícito: Compose nombra el proyecto por la carpeta y dos carpetas iguales se pisarían.
 # - Puertos solo en 127.0.0.1: Docker se salta el cortafuegos, así que nada se publica fuera.
 # - Datos en volúmenes con nombre: un volumen anónimo se borraría solo al quedar huérfano.
